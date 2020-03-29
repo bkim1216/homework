@@ -1,0 +1,13 @@
+import json
+import requests
+
+url = "https://api.spacexdata.com/v3/capsules"
+r = requests.get(url)
+
+def call_api(object):
+    global r
+
+    text = json.dumps(object, sort_keys=True, indent=4)
+    print(text)
+
+call_api(r.json())
